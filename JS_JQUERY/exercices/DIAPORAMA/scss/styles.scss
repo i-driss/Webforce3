@@ -1,0 +1,42 @@
+
+    section {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        img {
+            width: 100%;
+        }
+        .indicateur{
+            bottom: 0;
+            left: 50%; 
+            position: absolute;
+            transform: translateX(-50%); 
+            span{
+                opacity: 50%;
+            }
+        }
+        span {
+            font-size: 4rem;
+            color: white;
+            font-weight: 600;
+            
+        }
+        .gauche, .droite{
+            position: absolute;
+            top: 50%;
+            opacity: 70%;
+        }
+
+        .gauche:hover, .droite:hover{
+            opacity: 100%;
+        }
+        .droite{
+            transform: translateY(-50%);
+            right: 10px;
+        }
+        .gauche{
+            transform: translateY(-50%);
+            left: 10px;
+            
+        }
+    }

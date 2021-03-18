@@ -1,0 +1,50 @@
+section {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+section img {
+  width: 100%;
+}
+
+section .indicateur {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+section .indicateur span {
+  opacity: 50%;
+}
+
+section span {
+  font-size: 4rem;
+  color: white;
+  font-weight: 600;
+}
+
+section .gauche, section .droite {
+  position: absolute;
+  top: 50%;
+  opacity: 70%;
+}
+
+section .gauche:hover, section .droite:hover {
+  opacity: 100%;
+}
+
+section .droite {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
+}
+
+section .gauche {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+/*# sourceMappingURL=styles.css.map */
