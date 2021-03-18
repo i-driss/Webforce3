@@ -1,0 +1,54 @@
+<?php include 'assets/header.php'; ?>
+
+<main>
+    <section class="container">
+        <h1 class="text-center py-5">Ajouter une annonce</h1>
+        <div>
+            <?php if(array_key_exists('errors', $_SESSION)): ?>
+                <div class="alert alert-danger">
+                <?= implode('<br>', $_SESSION['errors']); ?>
+                </div>
+
+            <?php endif; ?>
+        </div>
+        <div>
+            <form method="POST">
+                <div class="row">
+                    <div class="mb-3 col-12">
+                      <label for="title" class="form-label">Titre</label>
+                      <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="mb-3 col-12">
+                      <label for="description" class="form-label">Description</label>
+                      <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label for="postal_code" class="form-label">Code postal</label>
+                        <input type="number" class="form-control" id="postal_code" name="postal_code">
+                      </div>
+                    <div class="mb-3 col-6">
+                        <label for="city" class="form-label">Ville</label>
+                        <input type="text" class="form-control" id="city" name="city">
+                      </div>
+                    <div class="mb-3 col-12">
+                        <label for="type" class="form-label">Type</label>
+                        <select class="form-select" id="type" name="type">
+                            <option selected>Location</option>
+                            <option value="vente">Vente</option>
+                          </select>
+                      </div>
+                      <div class="mb-3 col-6">
+                        <label for="price" class="form-label">Prix</label>
+                        <input type="number" class="form-control" id="price" name="price">
+                      </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary mb-5">Ajouter</button>
+              </form>
+        </div>
+    </section>
+</main>
+
+
+
+<?php include 'assets/footer.php'; ?>

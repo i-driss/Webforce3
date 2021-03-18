@@ -1,0 +1,28 @@
+<?php include 'assets/header.php'; ?>
+
+<main>
+    <section class="container">
+        <h1 class="text-center py-5">Les annnonces</h1>
+
+        <?php foreach($annonces as $annonce): ?>
+        <div class="card mx-auto my-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase"><?= $annonce['title'] ?></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><?= $annonce['price'] ?>€</h6>
+              <p class="card-text"><?= $annonce['description'] ?></p>
+              <ul>
+                  <li>Code postal : <?= $annonce['postal_code'] ?></li>
+                  <li>Ville :<?= $annonce['city'] ?></li>
+                  <li>Type :<?= $annonce['type'] ?></li>
+                  
+              </ul>
+            </div>
+          </div>
+          <?php endforeach ?>
+
+    </section>
+</main>
+
+
+
+<?php include 'assets/footer.php'; ?>

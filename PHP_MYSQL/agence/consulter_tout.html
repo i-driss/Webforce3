@@ -1,0 +1,40 @@
+<?php include 'assets/header.php'; ?>
+
+<main>
+    <section class="container">
+        <h1 class="text-center py-5">Toutes les annonces</h1>
+        <div>
+            <table class="table">
+                
+                <thead>
+                    <tr>
+                        <!--<th>productCode</th>-->
+                        <th>statut</th>
+                        <th>titre</th>
+                        <th>ville</th>
+                        <th>prix</th>
+                        <th>details</th>
+                        <!--<th>Valeur du Stock</th>-->
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($annonces as $annonce): ?>
+                  <tr>
+                      <?php  echo (empty($annonce['reservation_message'])) ? '<td class="bg-success">Libre</td>' : '<td class="bg-warning">Réservé</td>'  ?>
+                      <td><?= $annonce['title'] ?></td>
+                      <td><?= $annonce['city'] ?></td>
+                      <td><?= $annonce['price'] ?> €</td>
+                      <td><a href="/webforce3/evaluation/consulter_annonce.php?annonce=<?= $annonce['id'] ?>">Consulter</a></td>
+                      
+                  </tr>
+                  <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+
+
+<?php include 'assets/footer.php'; ?>
