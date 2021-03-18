@@ -1,9 +1,0 @@
-Polices : Open Sans, Helvetica
-
-Couleurs :
-Navbar : rgba(0, 0, 0, .8)
-Titres et icones : #382526
-Orange : Dégradé vertical de #FF9B22 à #FF8C00
-Gris clair : #F7F5F4
-Footer : #333
-Footer2 : #777

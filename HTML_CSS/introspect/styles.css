@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap');
+
+p, a, h1, h2 {
+    
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+header nav h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+#banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+}
+
+
+
+
+main a, main p {
+
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+header p{
+
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+header nav a {
+    font-weight:700;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+}
+
+#span-introspect {
+    font-weight: 700;
+}
+
+header nav {
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+#introspect_h1 {
+    color: #e3484e;
+}
+
+nav li {
+
+    display: inline-block;
+    padding: 10px;
+}
+
+header section {
+    position: relative;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+
+
+header section a {
+    display: inline;
+    padding: 15px 30px 15px 30px;
+    font-weight:700;
+    border: 2px solid #ffffff;
+    font-size: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+main a, footer a {
+    border: solid;
+    border-width: 3px;
+    display: inline;
+    padding: 10px 25px 10px 25px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+h2 ,main h1, main a {
+    color: #e3484e;
+    text-transform: uppercase;
+}
+
+.section_pellent {
+    display: flex;
+    
+    
+}
+
+article {
+    width: 300px;
+}
+
+.conteneur {
+    width: 1000px;
+    margin: auto;
+}
+
+footer {
+    background-color: #e3484e;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+footer form {
+    
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap : 20px;
+}
+
+#message {
+
+    grid-column: 1/3;
+}
+
+form button {
+    grid-column: 1/3;
+    width: 150px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding:10px 20px 10px 20px ;
+    font-weight: 400;
+}
+
+footer button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    margin-top: 20px;
+}
+input, textarea{
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    opacity: 25%;
+}
+
+input:hover,input:focus , textarea:focus, textarea:hover{
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    opacity: 100%;
+    outline: 0px;
+}
+
+footer label {
+    font-weight: 400;
+}
+
+footer span {
+    opacity: 25%;
+    text-transform: none;
+}
+
+footer span::before {
+    content:"\00a9";
+}
+
+main h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+main h1, footer h1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+

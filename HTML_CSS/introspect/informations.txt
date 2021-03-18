@@ -1,0 +1,10 @@
+Polices : Pacifico, Lato
+
+Couleurs :
+Fond Noir : #1c1c1c
+Texte : #111111
+Blanc : #ffffff
+Rouge : #e5474b
+Gris : #b3b3b3
+Bordures formulaire : blanc + opacité 25%, passent en blanc lors de la saisie
+Texte copyright : #f2a3a5

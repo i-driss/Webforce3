@@ -1,0 +1,159 @@
+@import "variables";
+@import "mixin";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&display=swap');
+
+:root{
+    font-size: 16px;
+}
+
+header {
+    #introspect-nav{
+        font-family: 'Pacifico', cursive;
+        font-size: 1.5rem;
+    }
+    nav{
+        a:not(#introspect-nav){
+            font-weight: bold;
+        }
+    }
+    section{
+        position:relative;
+        div{
+            @include centrer;
+            @media screen and (min-width: 601px) {
+                p{
+                    font-size:2rem;
+                    font-weight: 300;
+                }
+              }
+            @media screen and (max-width: 600px) {
+                p {
+                  font-size: 1rem;
+                }
+              }
+            #span-introspect{
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    a:not(#introspect-nav), h1, h2, button, label {
+        text-transform: uppercase;
+    }
+    p{
+        padding: 1rem 0rem 1rem 0px;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    main{
+        .section-magna{
+            div{
+                padding: 3rem 0rem 2rem 0rem;
+                h1{
+                    margin: 1rem 0rem 2rem 0rem;
+                    
+                }
+                a{
+                    margin: 1rem 0rem 2rem 0rem;
+                }                
+            }
+
+        }
+        .section-pellent{
+            background-image: linear-gradient(to right, #f3f3f3, #f3f3f3 50%, #f7f7f7, #f7f7f7 50%);
+            .div-pallent{
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                h2{
+                    margin: 1rem 0rem 2rem 0rem;
+                }
+                
+            }
+        }
+        .section-article{
+            padding-top: 3rem;
+            padding-bottom: 3rem;     
+        }
+    }
+    footer{
+        padding: 3rem 0rem 3rem 0rem;
+        h1{
+            padding: 1rem 0rem 0rem 0rem; 
+        }
+        label{
+            padding: 2rem 0rem 2rem 0rem; 
+        }
+        button{
+            margin: 2rem 0rem 2rem 0rem; 
+        }
+        form div {
+            gap: 1rem;
+        }
+        input, textarea{
+            opacity: 25%;
+            outline: none !important;
+            
+        }
+        input:focus, textarea:focus{
+            opacity: 100%;
+            
+        }
+        
+    }
+}

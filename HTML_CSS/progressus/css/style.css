@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+.nos-services {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body h1:not(:first-child), body h2, body i {
+  color: #382526;
+}
+
+body header nav {
+  background-color: #020102;
+}
+
+body header section img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  height: 50vh;
+}
+
+body main i {
+  font-size: 64px;
+}
+
+body main .services {
+  background-color: #f7f5f4;
+}
+
+body main .services h3 {
+  font-weight: 600;
+}
+
+body main section div .question-plus {
+  background-color: #f7f5f4;
+  padding: 2rem;
+}
+
+body footer {
+  color: #cccccc;
+  font-weight: 300;
+}
+
+body footer section:first-child {
+  background-color: #333;
+}
+
+body footer section:last-child {
+  background-color: #191919;
+}
+
+body footer section:last-child a {
+  text-decoration: none;
+  color: #cccccc;
+}
+/*# sourceMappingURL=style.css.map */

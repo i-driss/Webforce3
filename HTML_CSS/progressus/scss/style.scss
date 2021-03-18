@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import "mixins";
+
+.nos-services {
+    @include centrer
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    h1:not(:first-child),h2,i{
+        color: #382526;
+    }
+    header{
+        nav{
+            background-color: #020102;
+        }
+        section{
+            img{
+                object-fit: cover;
+                object-position: top;
+                height: 50vh;
+            }
+            
+        }
+    }
+    main{
+        i{
+            font-size: 64px;
+        }
+        .services{
+            background-color: #f7f5f4;
+            h3{
+                font-weight: 600;
+            }
+        }
+    
+        section{
+            div {
+                .question-plus{
+                    background-color: #f7f5f4;
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+    footer {
+        color: #cccccc;
+        font-weight: 300;
+        section:first-child{
+            background-color: #333;
+        }
+        section:last-child{
+            background-color: #191919;
+            a{
+                text-decoration: none;
+                color: #cccccc;
+            }
+        }
+    }
+}

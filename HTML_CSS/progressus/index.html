@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progressus</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+
     <header>
+
         <!-- NAVIGATION -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="">
-            </a>
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,133 +42,144 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                   </li>
-                
               </ul>
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">connexion</button>
+              <button class="btn btn-outline-light">Connexion</button>
             </div>
-            </div>
+        </div>
           </nav><!-- /NAVIGATION -->
 
-        <!-- NOS SERVICES -->
-        <section>
-            <img class="w-100 " style="object-fit: cover;" src="images/bg_header.jpg" alt="">
-            <div>
-                <h1>nos services extraordinaires</h1>
-                <p><span>progressus: </span> Une entreprise à la pointe du progrès</p>
+        <!-- Nos services extraordinaires -->
+        <section style="position: relative;" class="text-white">
+            <img class="w-100" src="images/bg_header.jpg" alt="">
+            <div class="nos-services container text-center">
+                <h1 class="text-uppercase">nos services extraordinaires</h1>
+                <p><span class="text-uppercase">progressus: </span>Une entreprise à la pointe du progrès</p>
                 <div>
-                    <a href="">plus d'informations</a>
-                    <a href="">souscrire</a>
+                    <a class="btn btn-outline-light" href="">plus d'informations</a>
+                    <a class="btn btn-warning " href="">souscrire</a>
                 </div>
             </div>
-        </section><!-- /NOS SERVICES -->
+        </section> <!-- /Nos services extraordinaires -->
     </header>
 
     <main>
+
         <!-- INTRO -->
-        <section class="container">
-            <h2>le meilleur endroit qui plait à tout le monde</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ut cumque distinctio neque quibusdam cum!</p>
+        <section class="container-fluid text-center py-5">
+            <h2>Le meilleur endroit qui plait à tout le monde</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut soluta officiis harum debitis est molestiae.</p>
         </section> <!-- /INTRO -->
 
         <!-- SERVICES -->
-        <section>
-            <div class="container">
-                <h2>Nos services</h2>
-                <div class="row">
-                    <article class="col-3">
-                        <h3>Des engrenages</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam suscipit magni fuga, corporis temporibus sit cupiditate. Ab nulla quam nobis quo ea, quis, qui cupiditate facilis ipsam provident vero soluta!</p>
-                    </article>
-                    <article class="col-3">
-                        <h3>Des éclairs</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam suscipit magni fuga, corporis temporibus sit cupiditate. Ab nulla quam nobis quo ea, quis, qui cupiditate facilis ipsam provident vero soluta!</p>
-                    </article>
-                    <article class="col-3">
-                        <h3>Des coeurs</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam suscipit magni fuga, corporis temporibus sit cupiditate. Ab nulla quam nobis quo ea, quis, qui cupiditate facilis ipsam provident vero soluta!</p>
-                    </article>
-                    <article class="col-3">
-                        <h3>Des sourires</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam suscipit magni fuga, corporis temporibus sit cupiditate. Ab nulla quam nobis quo ea, quis, qui cupiditate facilis ipsam provident vero soluta!</p>
-                    </article>
-                </div>
-            </div>
-        </section><!-- /SERVICES -->
+        <section class="services text-center py-5">
+            
+            <h2 class=" pb-4">Nos services</h2>
+            <div class="container m-auto row justify-content-between">
+            <article class="col-3">
+                <i class="las la-cogs"></i>
+                <h3 class="py-3">Des engrenages</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nulla eveniet nam, alias sapiente consequuntur ab beatae. Voluptatem blanditiis nam temporibus, facilis nemo recusandae esse aliquam cum iusto id sed.</p>
+            </article>
+
+            <article class="col-3">
+                <i class="las la-bolt"></i>
+                <h3 class="py-3">Des éclairs</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nulla eveniet nam, alias sapiente consequuntur ab beatae. Voluptatem blanditiis nam temporibus, facilis nemo recusandae esse aliquam cum iusto id sed.</p>
+            </article>
+
+            <article class="col-3">
+                <i class="las la-heart"></i>
+                <h3 class="py-3">Des coeurs</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nulla eveniet nam, alias sapiente consequuntur ab beatae. Voluptatem blanditiis nam temporibus, facilis nemo recusandae esse aliquam cum iusto id sed.</p>
+            </article>
+
+            <article class="col-3">
+                <i class="las la-smile"></i>
+                <h3 class="py-3">Des sourires</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nulla eveniet nam, alias sapiente consequuntur ab beatae. Voluptatem blanditiis nam temporibus, facilis nemo recusandae esse aliquam cum iusto id sed.</p>
+            </article>
+          </div>
+        </section>  <!-- /SERVICES -->
 
         <!-- QUESTIONS -->
-        <section class="container">
-            <h2>Questions fréquentes</h2>
+        <section class="container py-5">
+            <h2 class="text-center pb-4">Questions fréquentes</h2>
+
             <div class="row">
-                <section class="col-6">
+                <div class="col-6">
                     <h3>Which code editor would you recommend?</h3>
-                    <p>I'd highly recommebd you <a href="">Visual Studio Code</a> - a free code ditor which I'm using daily. Awesome too!</p>
-                </section>
-                    
-                <section class="col-6">
-                    <h3>Nice header. Where do i find more images like that one?</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic magni pariatur adipisci neque perferendis tempora possimus ab perspiciatis omnis expedita.</p>
-                </section>
-
-                <section class="col-6">
-                    <h3>Can i use it to build a site for my client?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe at alias labore, aspernatur sapiente officia tempora vel id porro obcaecati.</p>
-                </section>
-
-                <section class="col-6">
+                    <p>I'd highly recommend you <a href="">Visual Studio Code</a> - a free code editor which I'm using dayli. Awesome too!</p>
+                </div>
+                <div class="col-6">
+                    <h3>Nice header. Where do I find more images like that one?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, laborum.</p>
+                </div>
+                <div class="col-6">
+                    <h3>Can I use it to build a site for my client?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis repellat nemo molestiae, excepturi quasi vel iusto facilis quam autem commodi.</p>
+                </div>
+                <div class="col-6">
                     <h3>Can you customize this template for me?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum illum magnam, rem quas unde. Eum aliquam nam dolorum molestiae?</p>
-                </section>
-
-                <section class="col-12">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consectetur, quos mollitia tenetur repellendus, quam nostrum dolore facere nam itaque voluptas accusantium consequuntur porro similique repudiandae fuga aliquid rem cum commodi sapiente? Officia sequi doloremque iusto ipsam rem praesentium at tempore expedita ducimus placeat suscipit et, odio harum quae vitae!</p>
-                    <a href="">En savoir plus >></a>
-                </section>
-            </div>
-        </section><!-- /QUESTIONS -->
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quasi doloribus assumenda est praesentium odit.</p>
+                </div>
+                <div class="col-12 question-plus">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quia dolores saepe sequi quae perspiciatis, est fugit quos illo magni atque soluta expedita mollitia laboriosam, repudiandae voluptatem, ad culpa voluptatibus.</p>
+                    <p class="text-right"><a class="btn text-white mt-2" style="background-color: #ff920f;" href="">En savoir plus >></a></p> 
+                </div>
+         </div>
+        </section> <!-- /QUESTIONS -->
     </main>
 
-    <footer class="container">
-        <section class="row">
-            <!-- contact -->
-            <div class="col-4">
-                <h2>Contact</h2>
-                <address>+234 23 9873237</address>
-                <address>some.email@somewhere.com</address>
-                <address>234 Hidden Pond Road, Ashland City, TN 37015</address>
-            </div><!-- /contact -->
-
-            <!-- follow -->
-            <div class="col-4">
-                <h2>Follow me</h2>
-                <div>
-
-                </div>
-            </div><!-- /follow -->
-
-            <!-- widget -->
-            <div class="col-4">
-                <h2>Text widget</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, maxime amet consequatur illum sit fuga veniam sed? Voluptate officia ab velit accusamus ullam mollitia reiciendis iure eos ratione corporis? Eum, omnis a modi, magni, deleniti dolores iusto in reiciendis nemo itaque voluptatum corporis iure nam architecto facilis saepe numquam natus.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sapiente porro unde distinctio vero esse! Eos voluptate sed, minus, harum vero quos necessitatibus dolorem beatae perspiciatis officia sunt dignissimos eaque quod ducimus iste sit, quam deserunt labore amet quae qui.</p>
-            </div> <!-- widget -->
-        </section>
-
-        <section class="row">
-            <div class="col-6">
-            <a href="">Acceuil</a>
-            <a href="">A propos</a>
-            <a href="">Services</a>
-            <a href="">Contact</a>
-            <a href="">Inscription</a>
-            </div>
-
+    <!-- BAS DE PAGE -->
+    <footer >
+        <section class="pt-5">
             
+            <div class="container m-auto row pb-4">
+    
+                <div class="col-3">
+                    <h3>Contact</h3>
+                    <address>+234 23 9873237</address>
+                    <address>some.email@somewhere.com</address>
+                    <address>234 Hidden Pond Road, Ashland City, TN 37015</address>
+                </div>
+    
+                <div class="col-3">
+                    <h3>Follow me</h3>
+                    <div>
+                        <i style="font-size: 48px; color: antiquewhite;" class="lab la-twitter"></i>
+                        <i style="font-size: 48px; color: antiquewhite;" class="lab la-facebook-f"></i>
+                        <i style="font-size: 48px; color: antiquewhite;" class="lab la-github"></i>
+                        <i style="font-size: 48px; color: antiquewhite;" class="lab la-dribbble"></i>
+                    </div>
+                </div>
+    
+                <div class="col-6">
+                    <h3>Text widget</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum id vel fugiat aut quibusdam velit omnis aperiam cupiditate recusandae similique placeat doloremque temporibus, a exercitationem nobis perspiciatis? Quasi, adipisci deserunt!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga pariatur, dignissimos sed eligendi ducimus mollitia nulla ipsum sequi aliquid vel!</p>
+                </div>
+    
+            </div>
         </section>
 
-    </footer>
+        <section class="pt-2">
+            <div class="container m-auto row">
+            <ul class="d-inline col-6" >
+                <li class="d-inline"><a href="">Accueil</a></li>
+                <li class="d-inline"><a href="">A proposs</a></li>
+                <li class="d-inline"><a href="">Services</a></li>
+                <li class="d-inline"><a href="">Contact</a></li>
+                <li class="d-inline"><a href="">Inscription</a></li>
+            </ul>
+            <div class="col-6">
+                <p class="text-right">Copyright &copy; 2020 Webforce3</p>
+            </div>
+        </div>
+        </section>
 
+    </footer> <!-- /BAS DE PAGE -->
 
-    <script src="js/bootstrap.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>   
-    <script src="js/bootstrap.bundle.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>

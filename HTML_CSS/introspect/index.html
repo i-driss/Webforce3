@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/line-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-3">
+            <a id="introspect-nav" class="navbar-brand text-danger" href="#">introsopect</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active ">
+                  <a class="nav-link" href="#">accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">services</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">contact</a>
+                </li>
+              </ul>
+              
+            </div>
+        </div>
+          </nav>
+
+        <!-- Introspect -->
+        <section >
+            <img class="w-100" src="images/banner.jpg" alt="">
+            <div class="container text-light text-uppercase" >
+                 
+                 <p ><span id="span-introspect">introspect: </span>Lorem ipsum dolor sit amet adipisicing elit. Ea impedit minima consequatur repellendus corrupti</p>
+                 <a class="btn btn-outline-light rounded-0" href="">plus d'infos</a>
+            </div>
+
+        </section> <!-- /Introspect -->
+
+    </header>
+
+    <main >
+
+        <!-- MAGNA ETIAM -->
+        <section class="container m-auto section-magna" >
+            <div class="">
+            <h1 class="text-danger">magna etiam lorem</h1>
+            <p>
+                Suspendisse, ipsum dolor sit amet consectetur adipisicing elit. Neque, asperiores! Nisi repudiandae quia odit facilis. Et, error. Iusto ut, architecto ipsam illo aperiam aspernatur veniam, sit delectus minima, rem eum quis cupiditate voluptas vitae nam magnam nemo aliquid est assumenda fugiat. Cum a earum veritatis. Unde nesciunt magnam impedit quaerat.
+            </p>
+            <a class="btn btn-outline-danger rounded-0" href="">en savoir plus</a>
+            </div>
+        </section> <!-- /MAGNA ETIAM -->
+    
+        <!-- PELLENT MORBINI -->
+        <section class="section-pellent" >
+                <div class="div-pallent container m-auto row justify-content-between">
+                <div class="col-sm-12 col-md-5 p-0">
+                    <h2 class="text-danger">pellentesque adipis</h2>
+                    <img class="w-100" src="images/pic01.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam dolorem voluptatem architecto magni. Nemo, assumenda quod. Sint rem ea nobis vero ratione sit?</p>
+                </div>
+                <div class="col-sm-12 col-md-5 p-0">
+                    <h2 class="text-danger">morbi interdum mol</h2>
+                    <img class="w-100" src="images/pic02.jpg" alt="">
+                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam dolorem voluptatem architecto magni. Nemo, assumenda quod. Sint rem ea nobis vero ratione sit?</p>
+                </div>
+                </div>
+        </section>
+            
+        </section> <!-- /PELLENT MORBINI -->
+
+        <!-- ARTICLES -->
+        <section class="section-article row justify-content-between align-items-center container m-auto" >
+            <article class="col-sm-8 col-md-8 col-lg-4 m-auto px-0">
+                <i class="las la-laptop " style="font-size: 64px; color: #b9b4b1"></i>
+                <h2 class=" text-danger">tempus feugiat</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi fugiat ullam tempora corrupti! Deleniti, porro?</p>
+                <a class="btn btn-outline-danger rounded-0" href="">en savoir plus</a>
+            </article>
+            <article class="col-sm-8 col-md-8 col-lg-4 m-auto px-0">
+                <i class="las la-gem" style="font-size: 64px; color: #b9b4b1"></i>
+                <h2 class="text-danger">aliquam nulla</h2>
+                <p style="min-height: 80px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.  corporis ullam! Labore, quidem reprehenderit!</p>
+                <a class="btn btn-outline-danger rounded-0" href="">en savoir plus</a>
+            </article>
+            <article class="col-sm-8 col-md-8 col-lg-4 m-auto px-0">
+                <i class="las la-laptop" style="font-size: 64px; color: #b9b4b1"></i>
+                <h2 class="text-danger">sed magna</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae et porro ipsam perspiciatis eaque sint.</p>
+                <a class="btn btn-outline-danger rounded-0" href="">en savoir plus</a>
+            </article>
+        </section> <!-- /ARTICLES -->
+
+    </main>
+
+    <!-- CONTACT -->
+    <footer class="text-light bg-danger container-fluid">
+
+        <div class="container">
+        <h1>nous contacter</h1>
+
+        <form action="contact.php" method="get">
+            <div class="form-group row justify-content-between m-0">
+                <div class="col px-0">
+                    <label for="nom">nom</label>
+                    <input type="email" class="form-control bg-transparent rounded-0 text-white" id="nom" ></div>
+                <div class="col px-0">
+                    <label for="email">email</label>
+                    <input type="email" class="form-control bg-transparent rounded-0 text-white" id="mail" >
+                </div>
+                <div class="col-12 px-0">
+                    <label for="message">message</label>
+                    <textarea class="form-control bg-transparent rounded-0 text-white" id="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light rounded-0 ">Envoyer</button>
+               </div>
+               <p style="opacity: 25%;">&copy; Webforce3 2020</p>
+          </form>
+          
+    </div>
+    </footer> <!-- /CONTACT -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
