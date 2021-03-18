@@ -1,0 +1,32 @@
+div {
+
+    text-align: center;
+    background-color: lightgrey;
+    padding: 10px;
+    h1{
+        font-size: 1.5rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+
+    .resume{
+        width: 300px;
+       
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .rupture{
+        opacity: 40%;
+        display: none;
+    }
+
+    .information{
+        text-align: left;
+    }
+    img{
+        margin: auto;
+    }
+    
+}

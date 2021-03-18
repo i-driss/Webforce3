@@ -1,0 +1,7 @@
+<app-navigation></app-navigation>
+<h1 class="text-center py-3">Ramazon</h1>
+
+  <div>
+    <app-livre-short *ngFor="let book of books" [title]="book.title" [author]="book.author" [picture]="book.picture" [id]="book.id"></app-livre-short>
+    <!-- <app-livre *ngFor="let book of books" [title]="book.title" [author]="book.author" [price]="book.price" [abstract]="book.abstract" [picture]="book.picture" [quantity]="book.quantity"></app-livre> -->
+  </div>

@@ -1,0 +1,33 @@
+div {
+  text-align: center;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+div h1 {
+  font-size: 1.5rem;
+}
+
+div h3 {
+  font-size: 1rem;
+}
+
+div .resume {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div .rupture {
+  opacity: 40%;
+  display: none;
+}
+
+div .information {
+  text-align: left;
+}
+
+div img {
+  margin: auto;
+}
+/*# sourceMappingURL=livre.component.css.map */

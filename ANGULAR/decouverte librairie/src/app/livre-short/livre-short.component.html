@@ -1,0 +1,8 @@
+<div class="card bg-light" style="width: 18rem;">
+    <img [src]="picture" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Titre: {{title}}</h5>
+      <h3>Auteur: {{author | uppercase}}</h3>
+      <a [routerLink]="['livre' , id]">Détails</a>
+    </div>
+  </div>

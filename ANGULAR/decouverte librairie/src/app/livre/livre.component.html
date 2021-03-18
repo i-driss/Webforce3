@@ -1,0 +1,26 @@
+<app-navigation></app-navigation>
+<section class="container">
+    <div class="card" >
+        <img class="w-50" [src]="picture" alt="">
+        <div class="card-body">
+            <div class="p-0">
+                <h1>Titre: {{title}}</h1>
+                <h3>Auteur: {{author | uppercase}}</h3>
+                <p>Parution : {{dateP | date:'fullDate'}}</p>
+                <p [ngClass]="{'badge': true,'badge-success': quantity > 0,'badge-danger': quantity <= 0}" class="badge badge-success">Quantité : {{quantity}}</p>
+                <p [ngClass]="{'text-danger': price >= 100, 'text-success': price < 100}">Prix : {{price | currency:'EUR'}}</p>
+            </div>
+            <div class="resume m-auto p-0">
+                <p >Résumé : {{abstract}}</p>
+            </div>
+        
+            
+            <button [ngClass]="{'btn': true,'btn-primary': available,'btn-danger rupture': !available}" class="btn btn-primary my-3" *ngIf="price < 500" [disabled]="price > maxPrice || quantity < 1" (click)="onBuy()">Acheter</button>
+            <button class="btn btn-warning my-3 ml-3" (dblclick)="onAdd()" (click)="goToHome()">Retour</button>
+            <input class="form-control" type="number" [(ngModel)]="price">
+        </div>
+    </div>
+</section>
+
+
+

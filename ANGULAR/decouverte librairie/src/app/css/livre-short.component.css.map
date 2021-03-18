@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../livre-short/livre-short.component.scss"
+    ],
+    "names": [],
+    "file": "livre-short.component.css"
+}
