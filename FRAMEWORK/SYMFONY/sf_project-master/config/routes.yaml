@@ -1,0 +1,35 @@
+default_home:
+    path: /
+    controller: App\Controller\DefaultController::home
+
+default_contact:
+    path: /contactez-nous
+    controller: App\Controller\DefaultController::contact
+
+pictures_index:
+    path: /photos
+    controller: App\Controller\PicturesController::index
+
+
+audios_list:
+    path: /songs
+    controller: App\Controller\AudiosController::list
+
+audios_add:
+    path: /songs/add
+    controller: App\Controller\AudiosController::add
+
+# localhost:8000/songs/view/12
+# localhost:8000/songs/view?id=12 (exemple en $_GET classique)
+audios_view:
+    path: /songs/view/{id}
+    controller: App\Controller\AudiosController::view
+
+user_controller:
+    path: /user
+    controller: App\Controller\UserController::index
+
+user_load:
+    path: /user/add
+    controller: App\DataFixtures\AppFixtures::load
+

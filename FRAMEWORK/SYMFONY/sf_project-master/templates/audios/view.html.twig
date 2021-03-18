@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AudiosController!{% endblock %}
+
+{% block body %}
+<section class="row justify-content-center">
+    <div class="col-10">
+        <div class="row">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ audio.getTitle() }}</h6>
+                        <p class="card-text">{{ audio.getArtist() }}</p>
+
+                        <audio preload="auto" controls>
+                            <source src="{{ asset(audio.getSoundfile()) }}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

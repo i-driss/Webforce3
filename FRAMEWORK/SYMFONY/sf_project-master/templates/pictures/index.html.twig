@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PicturesController!{% endblock %}
+
+{% block body %}
+<section class="row justify-content-center">
+    <div class="col-6">
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <!-- L'attribut enctype="multipart/form-data" permet de gérer de l'upload de fichiers -->
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Titre de votre image</label>
+                <input type="text" name="title" id="title" class="form-control radius-0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="picture">Votre image</label>
+                <input type="file" name="picture" id="picture" class="form-control-file radius-0" accept="image/*" required>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-outline-info">Envoyer</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="w-100">
+        <hr>
+    </div>
+
+    <div class="col-10">
+        <div class="row">
+            {% for image in pictures %}
+            <div class="col-4">
+                <div class="card">
+                    <img src="{{ asset(image.getFilename()) }}" alt="..." class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ image.getTitle() }}</h6>
+                        <p class="card-text">{{ image.getCreatedAt()|date('d/m/Y H:i:s') }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+</section>
+{% endblock %}

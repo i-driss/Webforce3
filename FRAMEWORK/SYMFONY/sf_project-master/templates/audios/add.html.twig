@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AudiosController!{% endblock %}
+
+{% block body %}
+<section class="row justify-content-center">
+    <div class="col-6">
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <!-- L'attribut enctype="multipart/form-data" permet de gérer de l'upload de fichiers -->
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Titre de votre musique</label>
+                <input type="text" name="title" id="title" class="form-control radius-0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="artist">Artiste / Compositeur</label>
+                <input type="text" name="artist" id="artist" class="form-control radius-0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="music">Votre image</label>
+                <input type="file" name="music" id="music" class="form-control-file radius-0" accept="audio/mp3,audio/mpeg,audio/mpeg3,audio/x-mpeg-3" required>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-outline-info">Envoyer</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+{% endblock %}
