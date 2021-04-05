@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil | Dev'Loc
+{% endblock %}
+
+{% block body %}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mentions-légales</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section class="container py-5">
+
+            <h2 class="text-center text-dark mb-3 font-weight-normal">Dev'Loc - Idriss Diallo, Romain Morvant, Julien Gallerand | Projet WebForce3.</h2>
+
+                <ul class="d-none">
+                    <li>Siège social : 244 Route de Seysses, 31100 Toulouse</li>
+                        <li>Téléphone : 06 83 68 20 04</li>
+                        <li>E-mail : contact@dev'loc.fr</li>
+                        <li>Site internet : Dev'loc.fr</li>
+                </ul>
+
+
+            <h3 class="text-center text-secondary mb-3 font-weight-normal">Droits d'auteurs</h3> 
+                <p>En application du Code français, le logo Dev'Loc est protégé par les lois de la Propriété Intellectuelle.</p>
+                <p>Le logo et les illustrations sont l'oeuvre de l'AterlierJosephaJuvin</p>
+
+            <h3 class="text-center text-secondary mb-3 font-weight-normal">Protection des données personnelles</h3>
+                <p>Les données que vous nous confiez sont exclusivement destinées au traitement de vos demandes de mises en relations ou de vos commandes. En vertu de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d'un droit d'accès, de consultation, de modification, de rectification et de suppression des informations que vous nous avez communiquées.</p>
+
+            <h3 class="text-center text-secondary mb-3 font-weight-normal">La confidentialité</h3>
+                <p>Nous prenons l'engagement de respecter la confidentialité des informations recueillies lors de vos demandes et de vos commandes. Nous nous interdisons toute revente de fichiers, qu'il s'agisse d'adresses postales, d'adresses e-mail, de numéros de téléphone, de télécopie ou de tout autre renseignement. Vos coordonnées ne seront utilisées que pour satisfaire vos demandes et commandes. Elles pourront également nous servir à vous informer des opérations promotionnelles ou des nouveaux produits (sauf avis contraire de votre part).</p>
+
+</section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

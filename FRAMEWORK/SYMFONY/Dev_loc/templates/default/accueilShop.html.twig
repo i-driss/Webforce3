@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil: Dev'loc{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .profile-pic {
+            max-width: 100%;
+            height: auto;
+            min-width: 92px;
+            min-height: 92px;
+            max-width: 94px;
+            max-height: 94px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        
+        .card-pic {
+            background-color: #D0D3D4;
+            border-right: 1px solid#D7DBDD;
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        .circle {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            border: 6px solid rgba(236, 236, 236, 0.7);
+            position: relative;
+        transition: all .3s;
+        }
+        
+        
+        .user:hover {
+        background-color: #D5DBDB;
+        cursor: pointer;
+        }
+    
+        .availabe{
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #28B463;
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 0px;
+            transform: translateY(50%);
+        }   
+        .ntavailabe{
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #C0392B;
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 0px;
+            transform: translateY(50%);
+        } 
+        a{
+            text-decoration: none;
+            color: black;
+        }  
+    </style>
+{% endblock %}
+{% block body %}
+
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+    </div>
+    <div class="w-100 ">
+        <h1 class="text-center">Les développeurs</h1>
+        <div class="d-flex justify-content-center flex-wrap">
+        {% for dev in devs %}
+            <a href="{{ path('developer_controller', {user: (dev.id)}) }}">
+                <div class="user m-3  row rounded" style="max-width: 500px; min-width: 300px;">
+                    <div class="col-6 p-2 card-pic">
+                        <div class="circle">
+                            <img class="profile-pic" src="{{ asset(dev.getProfilPicture()) }}" >
+                        </div>
+                    </div>
+                    <div class="col-6 p-2 bg-white rounded">
+                        <div class="position-relative">
+                            <h6 class="text-muted">{{ dev.availabe  ? "Disponible" : "Indisponible" }}</h6>
+                            <span class="{{ dev.availabe  ? 'availabe' : 'ntavailabe' }}"></span>
+                        </div>
+                        <h5 class="pt-2">{{ dev.name }} {{ dev.firstname }} </h5>
+                        <p class="">Age : {{ dev.birthday | age }} ans</p>
+                        <p class=""><small class="text-muted">Note :</small></p>
+                    </div>
+                </div>	
+            </a>
+	    {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

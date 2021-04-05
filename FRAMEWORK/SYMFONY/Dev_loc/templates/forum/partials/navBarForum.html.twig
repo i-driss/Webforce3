@@ -1,0 +1,74 @@
+{% block stylesheets %}
+<style>
+.forumnav1{
+    color: black;
+}
+.forumnav1:hover{
+    background-color: #A9A9A9 !important;
+    color: white;
+}
+
+.forumnav2{
+
+    background: linear-gradient(to right,#244ce3, 50%,#e34c26);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+
+.forumnav2:hover{
+    background: linear-gradient(to right,#244ce3, 50%,#e34c26) !important;
+    -webkit-text-fill-color: white;
+}
+
+.forumnav3{
+    color: #f7e018;
+}
+.forumnav3:hover{
+    background-color: #f7e018 !important;
+    color: white;
+}
+
+.forumnav4{
+    color: #787cb4;
+}
+
+.forumnav4:hover{
+    color: white;
+    background-color: #787cb4 !important;
+}
+
+.forumnav5{
+    color: #272a37;
+}
+.forumnav5:hover{
+    background-color: #272a37 !important;
+    color: white;
+}
+
+.forumnav6{
+    color: #42c0fb;
+}
+.forumnav6:hover{
+    color: white;
+    background-color: #42c0fb !important;
+}
+</style>
+{% endblock %}
+
+  <nav class="mx-3 navbar navbar-expand-lg ">
+        <div class="d-flex w-100 justify-content-center">
+
+            <div class="list-group list-group-horizontal text-center">
+                <a href="{{path('forum_controller', {page: 'accueil'}) }}" class="{{ categorie == 'accueil' ? 'border border-secondary fw-bold' : '' }} bg-transparent forumnav1 list-group-item px-4"><i class="fas fa-home px-2"></i>ACCUEIL</a>
+                <a href="{{ path('forum_controller', {page: 'HTML/CSS'}) }}" class="{{ categorie == 'html/css' ? 'fw-bold border border-secondary' : '' }} bg-transparent forumnav2 list-group-item px-4"><i class="fab fa-html5 px-1"></i>HTML/CSS<i class="fab fa-css3-alt px-1"></i></a>
+                <a href="{{ path('forum_controller', {page: 'javascript'}) }}" class="{{ categorie == 'javascript' ? 'fw-bold border border-secondary' : '' }} bg-transparent forumnav3 list-group-item px-4"><i class="fab fa-js px-2"></i>JAVASCRIPT</a>
+                <a href="{{ path('forum_controller', {page: 'php'}) }}" class="{{ categorie == 'php' ? 'fw-bold border border-secondary' : '' }} bg-transparent forumnav4 list-group-item px-4"><i class="fab fa-php px-2"></i>PHP</a>
+                <a href="{{ path('forum_controller', {page: 'framework'}) }}" class="{{ categorie == 'framework' ? 'fw-bold border border-secondary' : '' }} bg-transparent forumnav5 list-group-item px-4"><i class="fas fa-briefcase px-2"></i> FRAMEWORK</a>
+                <a href="{{ path('forum_controller', {page: 'bdd'}) }}" class="{{ categorie == 'bdd' ? 'fw-bold border border-secondary' : '' }} bg-transparent forumnav6 list-group-item px-4"><i class="fas fa-database px-2"></i>BASE DE DONNEES</a>
+
+            </div>
+        </div>  
+
+    </nav>
+

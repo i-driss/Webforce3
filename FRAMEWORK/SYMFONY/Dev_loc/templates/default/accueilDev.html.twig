@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil: Dev'loc
+{% endblock %}
+
+{% block stylesheets %}
+	<style>
+		.profile-pic {
+			max-width: 94px;
+			max-height: 94px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+
+		.circle {
+			border-radius: 50%;
+			overflow: hidden;
+			width: 100px;
+			height: 100px;
+			border: 6px solid rgba(236, 236, 236, 0.7);
+			position: relative;
+			transition: all 0.3s;
+		}
+		
+	</style>
+{% endblock %}
+{% block body %}
+
+	<section class="container d-flex justify-content-center pt-3">
+		<div class="pt-2">
+			{% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+		</div>
+		<div class="py-2 w-100">
+			<h3 class="text-center alert alert-light">Bienvenue
+				<span class="text-warning">
+				{{user.firstname}} {{user.name}}
+				</span></h3>
+			<div class="my-4 d-flex justify-content-center ">
+				<div class="m-3  rounded" style="width: 18rem;">
+				<img src="{{user.getProfilPicture()}}" class="card-img-top w-50 rounded border" alt="ma photo">
+				<div class="pt-3">
+					<h5 class="card-title">Développeur</h5>
+				</div>
+				</div>
+				<div class="m-3">
+				<h5 class="text-muted text-center" style="max-width: 300px;">Nous comptons sur vos compétences pour aider les commerçants de la région à faciliter leur transition numérique !</h5>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+{% endblock %}
+
+

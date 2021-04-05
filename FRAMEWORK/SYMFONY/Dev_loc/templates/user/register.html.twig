@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block stylesheets %}
+<style>
+.logo{
+  width: 50px;
+  height: 50px;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<section class="container my-5">
+    {% include("user/partials/registerBarDev.html.twig") %}
+    <div class="mb-3 text-center">
+        <h1 class="text-warning">Créer un compte</h1>
+        <p>Créer un compte facilement avec l'un de ces services</p>
+        <div >
+            <a href="{{ path('connect_google_start') }}"><img class="logo m-3" src="/asset/images/logo/GoogleLOGO256x256.png" alt="logo google"></a>
+            <a href="{{ path('connect_facebook_start') }}"><img class="logo m-3" src="/asset/images/logo/FacebookLOGO256x256.png" alt="logo facebook"></a>
+        </div>
+    </div>
+    <div class="w-50 mx-auto">
+      {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    <form method="post">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Votre email">
+          </div>
+          <div class="mb-3 ">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <label  class="form-label">Mot de passe</label>
+              </div>
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">Doit contenir entre 8-20 caractères.</span>
+              </div>
+            </div>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
+          </div>
+          <div class="mb-3 ">
+            <label for="password" class="col-form-label">Confirmez votre mot de passe</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Votre mot de passe">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning">S'inscrire</button>
+          </div>
+        </form>
+      </div>
+</section>
+{% endblock %}

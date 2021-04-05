@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de paiement !{% endblock %}
+
+{% block stylesheets %}
+<style>
+.logo{
+  width: 80px;
+  height: auto;
+}
+
+.logoForm{
+    width: 40px;
+    height: auto;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<section class="container py-5">
+    <div class="mb-3 text-center">
+        <h1 class="text-warning mb-3 font-weight-normal">Paiement Sécurisé</h1>
+        <p>Les moyens de paiements acceptés</p>
+        <div>
+            <img class="logo m-3" src="/asset/images/logo/logo_CB.jpg" alt="logo Carte Bancaire">
+            <img class="logo m-3" src="/asset/images/logo/logo_MC.png" alt="logo MasterCard">
+            <img class="logo m-3" src="/asset/images/logo/logo_VISA.png" alt="logo Visa">
+        </div>
+    </div>
+    <div class="w-50 mx-auto ">
+
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+<form method="post">
+
+        <div class="form-group mb-3">
+            <label class="mb-1" for="titulary">Nom du titulaire</label>
+            <input type="text" class="form-control" name="titulary" placeholder="Nom du titulaire">
+        </div>
+        <div class="form-group mb-3">
+            <label class="mb-1" for="numbcard">Numéro de carte</label>
+            <input type="number" name="numbcard" class="form-control" placeholder="Numéro de carte">
+        </div>
+
+        <div class="row mb-1">
+
+            <div class="form-group col-md-3">
+                <label class="mb-1" for="month">Mois d'expiration</label>
+                    <select class="form-select mb-3" name="month">
+                        <option selected>Mois d'expiration</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="9">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="mb-1" for="year">Année d'expiration</label>
+                    <select class="form-select mb-3" name="year" required>
+                        <option selected required>Année d'expiration</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="mb-1" for="crypto">Cryptogramme</label>
+                <input type="number" class="form-control mb-3" name="crypto" placeholder="Votre Cryptogramme">
+            </div>
+        </div>
+        <div class="text-center">
+            <label class="text-center mb-1" for="card">Choisissez votre moyen de paiement :</label>
+        </div>
+        <div class="text-center position-relative justify-content-around mb-5">
+            
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="card" value="CB" required>
+            <label class="form-check-label" id="inlineRadio1" for="inlineRadio1"><img class="logoForm " src="/asset/images/logo/logo_CB.jpg" alt="logo Carte Bancaire"></label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="card" value="MasterCard">
+            <label class="form-check-label" id="inlineRadio2" for="inlineRadio2"><img class="logoForm" src="/asset/images/logo/logo_MC.png" alt="logo MasterCard"></label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="card" value="Visa">
+            <label class="form-check-label" id="inlineRadio3" for="inlineRadio3"><img class="logoForm" src="/asset/images/logo/logo_VISA.png" alt="logo Visa"></label>
+        </div>
+        </div>
+
+        <div class="text-dark text-center">
+            <button class="btn btn-lg btn-warning" type="submit">Payez</button>
+        </div>
+    </div>
+</form>
+
+</section>
+{% endblock %}

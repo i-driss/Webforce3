@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Financement ? | Dev'Loc
+{% endblock %}
+
+{% block body %}
+	{# Alert Container #}
+	<div class="container mt-5">
+		<div class="alert alert-warning text-center" role="alert">
+			<p>Vous cherchez des informations concernant les aides mises en place par l'état concernant la numérisation des entreprises ?</p>
+			<p>Vous êtes au bon endroit !</p>
+			<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-bookmark-check" viewbox="0 0 16 16">
+				<path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+				<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+			</svg>
+		</div>
+	</div>
+	{# / Alert Container #}
+	{# Funding container #}
+	<div class="container">
+		<h1 class="text-center text-dark fs-3 my-5">Quelles sont les aides financières pour la numérisation de votre entreprise dans la région
+			<span class="fst-italic text-danger fs-2">Occitanie</span>
+			?</h1>
+		<div class="row gy-5">
+			<div class="shadow-lg border p-5 mb-5 bg-white rounded col-6 text-center">
+				<h2 class="text-center">Les opérations Transition numérique et Cybersécurité</h2>
+				<p class="text-center pt-5 fs-5">Ce sont des actions collectives de sensibilisation et des actions individuelles de conseil et d’accompagnement des TPE-PME (pré-diagnostic de maturité numérique, élaboration de plan d’action personnalisé, …). Elles sont mises en œuvre par 5 opérateurs : CCI Occitanie, CMA Occitanie, FFB Occitanie, La Mêlée, Crescendo.</p>
+				<a href="https://www.laregion.fr/transition-numerique-et-cybersecurite" target="_blank" class="btn btn-warning text-dark">Opérations Transition numérique et Cybersécurité</a>
+			</div>
+			<div class="shadow-lg border p-5 mb-5 bg-white rounded col-6 text-center">
+				<h2 class="text-center">Le fonds L’Occal</h2>
+				<p class="text-center pt-5 fs-5">Ce fonds finance la digitalisation des entreprises des secteurs du tourisme, restauration, culture, sport et loisirs, commerçants et artisans. La prise en charge atteint jusqu'à 70% des dépenses éligibles, et le montant de l'aide est plafonné à 23 000 euros.</p>
+				<a href="https://www.laregion.fr/loccal" target="_blank" class="btn btn-warning text-dark mt-5">L'Occal</a>
+			</div>
+		</div>
+		<div class="row mb-5 gy-5">
+			<div class="shadow-lg border p-5 bg-white rounded col-6 text-center">
+				<h2 class="text-center">Le Contrat Relance</h2>
+				<p class="text-center pt-5 fs-5">Il concerne les TPE-PME-ETI. Il finance le recours à un conseil externe, les investissements immatériels ou matériels liés à la transition numérique et à la cybersécurité, et couvre jusqu’à 50 % des dépenses de conseil.</p>
+				<a href="https://hubentreprendre.laregion.fr/financement/contrat-relance-occitanie" target="_blank" class="btn btn-warning text-dark mt-5">Le Contrat Relance</a>
+			</div>
+			<div class="shadow-lg border p-5 bg-white rounded col-6 text-center">
+				<h2 class="text-center">Le Parcours Régional Industrie du Futur</h2>
+				<p class="text-center pt-5 fs-5">Il accompagne les TPE-PME industrielles dans la préparation et la mise en œuvre d’une démarche de transformation significative et durable, dont l’intégration du numérique et des technologies de production avancées. Il cumule une prestation de diagnostic, conseil et accompagnement réalisée par des prestataires référencés. La prise en charge peut aller jusqu’à 100%.</p>
+				<a href="https://hubentreprendre.laregion.fr/financement/parcours-regional-industrie-du-futur" target="_blank" class="btn btn-warning text-dark">Parcours Régional Industrie du Futur</a>
+			</div>
+		</div>
+	</div>
+	{# / Funding container #}
+
+
+{% endblock %}

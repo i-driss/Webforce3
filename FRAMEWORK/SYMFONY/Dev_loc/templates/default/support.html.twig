@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FAQ | Dev'Loc{% endblock %}
+
+{% block body %}
+<section class="container py-5">
+    <div class="row">
+        <h1 class="text-center text-warning mb-3 font-weight-normal">FAQ </h1>
+<article class="bg-light p-3">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-center text-secondary">
+        Inscription et connexion
+        </h3>
+        <a class="btn btn-secondary" data-bs-toggle="collapse" href="#questionOne" role="button" aria-expanded="false" aria-controls="faqOne">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+        <div class="collapse" id="questionOne">
+        <h4 class="text-center mt-5">Comment s'inscrire sur le site ?</h4>
+        <p class="text-center"><a  href="{{path('user_register')}}">Vous pouvez cliquer sur ce lien pour vous inscrire</a></p>
+        <p>
+            <ul>
+                <li>Si vous souhaitez poster des projets pour recevoir des offres de nos jeunes développeurs, choisissez "m'inscrire en tant que Commerçant".</li>
+                <li>Si vous souhaitez faire des offres pour réaliser les projets des commerçants, choisissez "m'inscrire en tant que Développeur".</li>
+            </ul>
+        </p>
+        <p class="text-center">
+            Ca y est vous êtes inscrit. Vous pouvez désormais remplir votre profil !
+        </p>
+
+        <h4 class="text-center mt-5">Comment supprimer mon compte ?</h4>
+        <p>Pour supprimer votre compte, veuillez vous rendre sur votre profil d'utilisateur en haut à droite, cliquer sur le lien "Supprimer mon compte" puis valider.</p>
+        
+
+        <h4 class="text-center mt-5">J'ai perdu mon mot de passe, que faire ?</h4>
+        <p>Pour récupérer votre mot de passe, <a href="{{path('forget_controller')}}">cliquez sur ce lien</a>.</p>
+    </div>
+</article>
+
+<article class="bg-light p-3">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-center text-secondary">
+        Fonctionnement du site
+        </h3>
+        <a class="btn btn-secondary" data-bs-toggle="collapse" href="#questionTwo" role="button" aria-expanded="false" aria-controls="questionTwo">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+        <div class="collapse" id="questionTwo">
+        <h4 class="text-center mt-5">Comment le site fonctionne ?</h4>
+
+        <p>Dev'Loc est un site qui met en relation les Commerçants et les Développeurs. La mise en relation est gratuite pour le commerçant, et c'est bien lui qui choisit son développeur. Dev'Loc trie les développeurs en fonction du niveau du projet soumis et du niveau du développeur sur la plateforme.</p>
+        <p>En effet, Dev'Loc propose un système pour monter de niveau pour les développeurs. Lorsque le développeur finalise des projets, il gagne de l'expérience qui lui permettra de monter de niveau.</p>
+        <p class="text-center">Avec Dev'Loc, il est possible de trouver facilement un développeur pour le commerçant qui soumet son projet.</p>
+
+    </div>
+</article>
+
+<article class="bg-light p-3">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-center text-secondary">
+        Litiges
+        </h3>
+        <a class="btn btn-secondary" data-bs-toggle="collapse" href="#questionThree" role="button" aria-expanded="false" aria-controls="questionThree">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+        <div class="collapse" id="questionThree">
+        <h4 class="text-center mt-5">Comment résoudre un litige ?</h4>
+
+<p>Communiquez et négociez avant tout. La communication est la clé dans cette phase pour tenter de trouver un accord amiable. C'est toujours la meilleure solution.</p>
+
+<p>Pour avancer sur le litige,</p>
+    <ol>
+<li>présentez la situation et les faits qui causent problème</li>
+<li>proposez des solutions concrètes pour avancer</li>
+<li>posez des questions, proposez des solutions à nouveau</li>
+    </ol>
+<p>L'admin pourra trancher un litige s'il dispose d'éléments clairs qui lui permettent de prendre une décision facilement. Les membres qui font des efforts pour résoudre le problème et faciliter la sortie du litige permettent d'avancer rapidement, leur solution est souvent privilégiée.</p>
+
+<p>Conseils supplémentaires :<p>
+<p>- Relancez régulièrement l'autre partie si vous n'obtenez pas de réponse sous un délai de 3 à 7 jours.<p>
+<p>- Essayez plusieurs moyens de communication : MP, emails, téléphone, skype.<p>
+<p>- Laissez une trace de vos échanges importants sur la messagerie privée.<p>
+<p>- Restez courtois, cela facilite les négociations et permet de trouver plus facilement une issue.<p>
+<p>- Expliquez la situation de votre point de vue.
+<strong class="fst-italic fw-normal">Exemple : préférez "Je n'ai pas reçu de réponse" à "il ne me répond plus".</strong><p>
+<p>- Décrivez uniquement les FAITS pour éviter d'interpréter l'intention de l'autre partie :
+<strong class="fst-italic fw-normal">Exemple : préférez "Je n'ai pas reçu le paiement malgré 5 relances" à "c'est un escroc, il veut m'arnaquer".</strong><p>
+    </div>
+</article>
+
+<article class="bg-light p-3">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-center text-secondary">
+        Evaluations après projets
+        </h3>
+        <a class="btn btn-secondary" data-bs-toggle="collapse" href="#questionFour" role="button" aria-expanded="false" aria-controls="questionFour">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+        <div class="collapse" id="questionFour">
+        <h4 class="text-center mt-5">A quoi servent les évaluations ?</h4>
+
+<p>Les évaluations sont données à la fin du projet, après livraison si celle-ci s'est bien déroulée. Elles concernent les conditions de réalisation du projet (respect des indications et des dates) et de communication avec le développeur. Les évaluations sont publiques et sauvegardées sur le profil des membres de Dev'Loc.</p>
+
+<p>En tant que client, il est utile et important d'évaluer son développeur : important, car sachant qu'ils seront évalués, ils seront incités à fournir une prestation de qualité. Utile pour les autres utilisateurs pour juger le sérieux et le professionnalisme des développeurs.</p>
+
+<p class="text-center">Les évaluations que vous recevez de la part des développeurs sont importantes également, n'oubliez pas de les demander.</p>
+
+
+    </div>
+</article>
+
+        <p class="text-center mt-3">Si la réponse à votre question ne se trouve pas dans la FAQ, n'hésitez pas à nous contacter directement via le formulaire ci-dessous.</p>
+    </div>
+
+    <div class="row">
+        <h1 class="text-center text-warning my-3 font-weight-normal">Contactez-nous</h1>
+
+        <form  method='POST'>
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label for="firstname">Prénom :</label>
+                    <input type="text" name="firstname" class="form-control mb-3" placeholder="Votre prénom">
+                </div>
+                <div class="col-6 form-group">
+                    <label for="lastname">Nom :</label>
+                    <input type="text" name="lastname" class="form-control mb-3" placeholder="Votre nom">
+                </div>
+            </div>
+                <div class="form-group p-0 col">
+                    <label for="email">Email :</label>
+                <input type="email" name="email" class="form-control mb-3" id="email" placeholder="Votre email">
+                </div>
+                <div class="col-6">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" name="subject" class="form-control mb-3" placeholder="Votre sujet">
+                </div>
+                <div class="form-group mb-3 p-0 col">
+                    <label for="message">Message :</label>
+                    <textarea type="text" name="message" class="form-control mb-3" id="message" placeholder="Votre message" rows="5"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="mt-2 btn btn-lg btn-warning" type="submit">Envoyer</button>
+                </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

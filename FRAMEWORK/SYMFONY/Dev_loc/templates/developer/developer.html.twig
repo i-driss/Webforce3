@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DeveloperController!{% endblock %}
+{% block stylesheets %}
+    <style>
+        .developer{
+            width: 80%;
+        }
+        .profile-pic {
+            max-width: 100%;
+            height: auto;
+            min-width: 128px;
+            min-height: 128px;
+            max-width: 122px;
+            max-height: 122px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .circle {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 128px;
+            height: 128px;
+            border: 3px solid rgba(192, 191, 191, 0.7);
+            position: relative;
+        transition: all .3s;
+            margin: auto;
+        }
+
+        .circle:hover {
+        background-color: #909090;
+        cursor: pointer
+        }
+    
+    </style>
+{% endblock %}
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+    <div class="pt-2 w-100">
+        <div class="developer bg-white rounded p-4 mx-auto">
+            <div class="profile  w-50 mx-auto">
+                <section class="d-flex justify-content-between">
+                    <div>
+                        <div class="circle">
+                            <img class="profile-pic" src="{{ dev.getProfilPicture() }}" >
+                        </div>
+                        <h2 class="text-center text-muted pt-3">{{ dev.firstname }} {{ dev.name }}</h1>
+                            <p class="">Age : {{ dev.birthday | age }} ans</p>
+                            <p class=""><small class="text-muted">Note :</small></p>
+                    </div>
+                    <div>
+                        <h6 class="text-muted">Langage de programmation favori :</h6>
+                        <p>{{ dev.skill }}</p>    
+                        <h6 class="text-muted">Film préféré :</h6>
+                        <p>{{ dev.movie }}</p>    
+                        <h6 class="text-muted">Musique du moment :</h6>
+                        <p>{{ dev.music }}</p>    
+                    </div>
+                </section>
+    
+                <div class="text-center py-4">
+                    <h4 class="pb-4 text-warning">Présentation</h4>
+                    <p>{{ dev.presentation }}</p>    
+                </div>
+                <div class="text-center mb-5">
+                    <a class="btn btn-primary" href="{{ path('projet_controller', {user: (dev.id)}) }}">Contacter pour mon projet</a>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

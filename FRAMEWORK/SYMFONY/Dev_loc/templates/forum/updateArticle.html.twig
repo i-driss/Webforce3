@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifiez un article !{% endblock %}
+
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+   
+
+<section class="container py-5">
+    {% include("forum/partials/navBarForum.html.twig") %}
+    <div class="mb-3 text-center">
+        <h1 class="text-warning font-weight-normal py-2">Modifiez votre post "{{ article.title }}" !</h1>
+    </div>
+
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        
+    <form method="post">
+        <div class="form-group mb-3">
+            <label class="mb-1" for="title">Titre de votre Post :</label>
+            <input type="text"  class="form-control mb-3" name="title" value="{{article.title}}">
+        </div>
+
+        <label class="mb-1" for="category">Choisir une catégorie </label>
+        <select class="form-select mb-3" name="category">
+            <option class="text-uppercase" selected value="{{article.category.id}}">{{article.category.name}}</option>
+            <option value="1">html/css</option>
+            <option value="2">javascript</option>
+            <option value="3">php</option>
+            <option value="4">framework</option>
+            <option value="5">base de donées</option>
+        </select>
+
+        <div class="form-group">
+            <label class="mb-1" for="content">Contenu de votre post</label>
+            <textarea type="text" class="form-control mb-3 ckeditor" name="content" placeholder="Votre contenu">{{article.content}}</textarea>
+        </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-warning mt-4">Modifiez</button>
+    </div>
+    </form>
+
+</section>
+
+{% endblock %}

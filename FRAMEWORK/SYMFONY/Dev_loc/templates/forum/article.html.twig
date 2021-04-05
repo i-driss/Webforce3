@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+
+    <div class="mb-3 text-center">
+            <h1 class="text-warning mb-3 font-weight-normal py-3">Bienvenue sur le Forum d'entraide de <strong class="fw-bold">\Dev'Loc\</strong></h1>
+
+            {% include("forum/partials/navBarForum.html.twig") %}
+            <div class="mb-3 text-center">        
+                <h1 class="text-warning font-weight-normal py-4">{{ article.title }}</h1>
+            </div>
+
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="card border-dark mb-3" style="width: 60rem;">
+            <div class="card-header d-flex justify-content-between">
+                <p>Post publié le {{ article.getCreatedAt() | date("m/d/Y", "Europe/Paris") }} par {{article.user.firstname}} {{article.user.name}} à {{ article.getCreatedAt() | date("H:i", "Europe/Paris") }}.</p>
+                <p>Commentaires : {{ article.commentary | length }}</p>
+            </div>
+
+            <div class="card-body text-dark">
+                <p class="card-text text-start">{{ article.content|raw }}</p>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between text-dark">
+                {% if user.id == article.user.id %}
+                <div class="text-start">
+                    <a href="{{path('update_article_controller', {category: (article.category.id),  id: (article.id)}  )}}" class="btn btn-outline-info">Modifier</a>
+                    <a href="{{path('delete_article_controller', {category: (article.category.id),  id: (article.id)}  )}}" class="btn btn-outline-danger">Supprimer</a>
+                </div>
+                {% endif %}
+                <div clas="text-end">
+                    <a href="#formCommentary" class="btn btn-outline-dark">Laissez un commentaire</a>
+                </div>
+        </div>
+    </div>
+
+    <h2 class="fst-italic text-end fs-5 text-secondary  me-5 pe-3 py-3">Les commentaires de l'article "{{ article.title }}": ({{ article.commentary | length }})</h2>
+        
+    {% if article.commentary is empty %}
+        <div class="card text-end border-dark mb-3" style="width: 60rem;">
+            <div class="card-header d-flex">
+            </div>
+
+            <div class="card-body fst-italic text-dark">
+                <p class="card-text">Désolé, aucune commentaire n'a été ecrit pour cet article.</p>
+            </div>
+
+            <div class="card-footer text-dark">
+            <p>Vous pouvez être le premier à laissez une commentaire en appuyant sur le bouton "Laissez un commentaire"</p>
+                <a href="#formCommentary" class="btn btn-outline-dark">Laissez un commentaire</a>
+            </div>   
+        </div>
+    {% endif %}
+    
+    {% for commentaire in article.commentary %}
+    {# Se lit "Pour chaque commentaire d'un article" #}
+    <div class="card border-dark ms-5 mb-3" style="width: 60rem;">
+
+        <div class="card-header d-flex">
+        <p class="text-center">Commentaire écrit par {{commentaire.article.user.name}} {{commentaire.article.user.firstname}} le {{ commentaire.getCreatedAt() | date("m/d/Y", "Europe/Paris") }} à {{ commentaire.getCreatedAt() | date("H:i", "Europe/Paris") }}</p>
+        </div>
+
+        <div class="card-body text-dark">
+            <p class="card-text text-start">{{ commentaire.content }}</p>
+        </div>
+        {% if user.id == commentaire.article.user.id %}
+        <div class="card-footer text-end text-dark">
+        
+            <a href="{{path('update_commentary_controller', {category: (article.category.id),  id: (article.id) , commentary: (commentaire.id)}  )}}" class="btn btn-outline-info">Modifier</a>
+            <a href="{{path('delete_commentary_controller', {category: (article.category.id),  id: (article.id) , commentary: (commentaire.id)} )}}" class="btn btn-outline-danger">Supprimer</a>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <article class="container me-5 pe-5 py-5" style="width: 60rem;">
+            <h1 class="text-center text-secondary py-3 px-0 my-3 font-weight-normal">Ecrivez un commentaire à propose de l'article "{{article.title}}"</h1>
+
+        <form method="post">
+            <div class="form-group mb-3 p-0 col">
+                <label class="mb-3" id="formCommentary" for="commentary">Ecrivez votre Commentaire</label>
+                <textarea type="text" name="commentary" class="form-control mb-3 ckeditor" placeholder="Votre commentaire" rows="5"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button class="mt-2 btn btn-lg btn-warning" type="submit">Envoyer</button>
+            </div>
+        </form>
+    </article>
+</section>
+{% endblock %}
+

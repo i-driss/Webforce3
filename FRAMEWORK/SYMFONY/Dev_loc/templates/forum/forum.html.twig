@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+
+        <div class="mb-3 text-center">
+            <h1 class="text-warning mb-3 font-weight-normal py-3">Bienvenue sur le Forum d'entraide de <strong class="fw-bold">\Dev'Loc\</strong></h1>
+
+            {% include("forum/partials/navBarForum.html.twig") %}
+    
+            {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+            {% endfor %}
+        <div class="container">
+            <div class="d-flex justify-content-between py-3">
+                <h3 class="text-decoration-underline text-warning text-start">Liste des derniers posts :</h3>
+                <p class="fst-italic">Vous pouvez publier un <a class="text-decoration-none" href="{{path('add_article_controller')}}">post</a> sur le forum si vous ne trouvez pas la solution à votre problème.</p>
+            </div>
+
+        {# nous bouclons sur articles. A l'intérieur de la boucle, nous utiliserons la variable article #}
+            
+            {% for article in articles %}
+            <div class="card mb-3 text-start" style="width: 60rem;">
+                <div class="card-header">
+                    <h3>{{ article.title }}</h3>
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text"><div>{{ article.content }}</div></p>
+                    <div class="text-end">
+                        <a href="{{path('article_controller', {category: (article.category.id),  id: (article.id)}  )}}" class="btn btn-outline-primary">Voir l'article</a>
+                    </div>
+                </div>
+
+                <div class="card-footer text-end text-muted">
+                    Publié le {{ article.getCreatedAt() | date("m/d/Y", "Europe/Paris") }} à {{ article.getCreatedAt() | date("H:i", "Europe/Paris") }} par {{article.user.firstname}} {{article.user.name}}.
+                </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+
+</section>
+
+{% endblock %}

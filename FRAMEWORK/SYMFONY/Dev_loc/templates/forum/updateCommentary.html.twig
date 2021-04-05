@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifiez un commentaire !{% endblock %}
+
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+
+
+<section class="container py-5">
+    {% include("forum/partials/navBarForum.html.twig") %}
+    <div class="mb-3 text-center">
+        <h1 class="text-warning font-weight-normal py-2">Modification de commentaire !</h1>
+    </div>
+
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+<section class="container py-5">
+            <h1 class="text-center text-secondary py-3 px-0 my-3 font-weight-normal">Modifiez votre commentaire à propos de l'article "{{article.title}}"</h1>
+
+        <form method="post">
+            <div class="form-group mb-3 p-0 col">
+                <label class="mb-3" for="commentary">Ecrivez votre Commentaire</label>
+                <textarea type="text" name="commentary" class="form-control mb-3" placeholder="Votre commentaire" rows="5">{{commentaires.content}}</textarea>
+            </div>
+
+            <div class="text-center">
+                <button class="mt-2 btn btn-lg btn-warning" type="submit">Modifiez</button>
+            </div>
+        </form>
+    
+    </section>
+{% endblock %}

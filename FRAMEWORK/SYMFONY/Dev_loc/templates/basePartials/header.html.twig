@@ -1,0 +1,27 @@
+{% block stylesheets %}
+<style>
+.logonav{
+  width: 50px;
+  height: auto;
+}
+</style>
+{% endblock %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-warning" href="{{path('home_controller')}}"><img class="logonav px-2" src="/asset/images/logo/logo_DEVLOC.png" alt="logo Dev'Loc">\Dev'Loc\</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <a class="nav-link text-warning px-3" href="{{path('funding_controller')}}">Les aides au financement</a>
+            <a class="nav-link text-warning px-3" href="{{path('support_controller')}}">Support</a>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <a class="btn btn-light text-dark px-3" href="{{path('app_logout')}}">Se déconnecter</a>
+            <a href="{{ path('home_connexion_controller') }}"><i class="fas fa-home px-2" style="font-size: 2em; color: #F2F3F4"></i></a>
+            {% else %}
+            <a class="btn btn-warning text-dark px-3" href="{{path('login_controller')}}">Se connecter</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

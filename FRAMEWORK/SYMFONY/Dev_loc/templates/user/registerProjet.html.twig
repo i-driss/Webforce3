@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+
+{% block stylesheets %}
+    <style>
+        .card {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+        
+        .card:hover {
+        opacity: 1;
+        background-color: #ffc107;
+          cursor: pointer;
+        }
+        .card-check{
+            position: relative;
+        }
+        .form-check-input{
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 0px;
+        }
+          
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section class="container my-5">
+        {% include("user/partials/registerBarDev2.html.twig") %}
+        <h1 class="text-center text-warning">Choisissez votre projet</h1>
+        <div class="w-50 mx-auto">
+        {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }}">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+                
+            <form method="post" class="my-5">
+                <div class="row row-cols-1 row-cols-md-3 g-4 text-center mb-3">
+                    <div class="col">
+                      <div class="card h-100 basic" >
+                        <img src="https://fakeimg.pl/80x80/?text=Basique" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-check">
+                                <h5 class="card-title text-center">Basique</h5>
+                                <input class="form-check-input" type="checkbox"  value="basic" name="package" id="packageBasic">
+                            </div>
+                          <p class="card-text">Site vitrine avec des fonctionnalités basiques</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="https://fakeimg.pl/80x80/?text=Avancé" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-check">
+                                <h5 class="card-title text-center">Avancé</h5>
+                                <input class="form-check-input" type="checkbox" value="advanced" name="package" id="packageAdvanced">
+                            </div>
+                          <p class="card-text">Site avancé avec des fonctionnalités personnalisées</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="https://fakeimg.pl/80x80/?text=Prenium" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="card-check">
+                                <h5 class="card-title text-center">Premium</h5>
+                                <input class="form-check-input" type="checkbox" value="prenium" name="package" id="packagePrenium">
+                            </div>
+                          <p class="card-text">Site sur-mesure avec des fonctionnalités complexes</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="details" class="form-label">Détaillez votre projet</label>
+                    <textarea name="details" class="form-control" placeholder="Expliquez en quelques lignes ce que vous recherchez" id="details" rows="6" ></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning">Valider mon projet</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+
+                $(".card").on("click", function (event) {
+                var $input = $("input", this)
+                $input.css("display", "inline").prop('checked', true);
+                $("input").not($input).css("display", "none").prop('checked', false);
+                $(this).css("background-color", "#ffc107");
+                $(".card").not(this).css("background-color", "");
+            });
+        });
+    </script>
+{% endblock %}

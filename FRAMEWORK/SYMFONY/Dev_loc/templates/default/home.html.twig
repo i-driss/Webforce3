@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil | Dev'Loc
+{% endblock %}
+{% block stylesheets %}
+<style>
+	.shopordev:hover{		
+
+        cursor: pointer;
+    }
+
+	.accueilrow{
+		width: 85%;
+	}
+
+	.intro{
+		background-color: #f3f2ef;	
+	}
+
+	.logodev{
+		width: 150px;
+		height: auto;
+	}
+
+	.imghome{
+		width: 85%;
+		opacity: 0.8;
+	}
+	.imghome:hover{
+		opacity: 1;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+
+{# Presentation #}
+
+<section class="container bg-light intro ">
+	<div class="row intro">
+		<div class="col text-center intro">
+			<img class="logodev m-3" src="/asset/images/logo/logo_DEVLOC.png" alt="logo Dev'Loc">
+			<h3 class="fs-5 text"><span class="text-warning fs-4 text">Dev'Loc</span> est une plateforme de mise en relation de jeunes développeurs web et de commerçants souhaitant développer leur activité grâce au numérique.</h2>
+		</div>
+	</div>
+</section>
+{# /Presentation #}
+
+{# Container 1 #}
+	<section class="container mb-5">
+		<div class="row">
+			<div class="col shopordev p-3">
+            <h3 class="text-center text-warning fw-bold me-5 pe-5 mb-1">Vous êtes commerçant ?</h3>
+				<p class="text-center me-5 pe-5">Vous êtes porteur de projet, <strong class="fw-normal"><u>inscrivez-vous</u></strong>.</p>
+				<a href="{{path('user_register', {status: 'shopkeeper',  rubrique: "1"}) }}"><img src="/asset/images/logo/accueilcommercant.jpg" class="rounded imghome float-start" alt="..."></a>
+			</div>
+			<div class="col shopordev p-3">
+            <h3 class="text-center text-warning fw-bold ms-5 ps-5 mb-1">Vous êtes développeur ?</h3>
+				<p class="text-center ms-5 ps-5">Vous recherchez une première expérience professionnelle, <strong class="fw-normal"><u>lancez-vous</u></strong>.</p>
+				<a href="{{path('user_register', {status: 'developer' ,  rubrique: "1"}) }}"><img src="/asset/images/logo/accueildev.jpg" class="rounded float-end imghome" alt="..."></a>
+			</div>
+		</div>
+	</section>
+
+{# / Container 1 #}
+{# Container 2 #}
+    <section class="container my-5 ">
+		<div class="row">
+            <h1 class="text-center text-warning pb-5">Qui sommes nous ?</h1>
+			<p class="text-center fs-5 text"> Nous sommes 3 jeunes développeurs Web en devenir. Nous avons monté ce projet lors de notre formation auprès de l'organisme Webforce3.</p>
+			<p class="text-center fs-5 text">Avec le contexte actuel, nous avions à coeur d'aider les commerçants ainsi que les jeunes développeurs web récemment diplômés.</p>
+			<p class="text-center fs-5 text">Notre <span class="text-danger">projet</span> est de mettre en relation les commerçants en recherche d'inclusion numérique et les jeunes développeurs à la recherche d'une première <span class="text-warning">expérience</span> professionnelle en sortie d'école.</p>
+		</div>
+    </section>
+{# / Container 2 #}
+
+
+
+{% endblock %}
+
+
+{#
+https://www.soregor.fr/sites/default/files/styles/related_content_thumb/public/technical_news_images/gettyimages-947144692-carte-bancaire.jpg?itok=zUpY5Nsj 
+ #}
+
+ 

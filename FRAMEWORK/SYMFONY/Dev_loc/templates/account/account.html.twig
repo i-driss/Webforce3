@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte: Dev'loc{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .account{
+            width: 80%;
+        }
+        .delete{
+            font-size: 1em;
+            padding: 3px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<section class="container d-flex justify-content-center pt-3">
+    <div class="pt-2">
+        {% if status == "developer"%}
+        {% include ("default/partials/navigationHomeConnectDev.html.twig") %}
+        {% elseif status == "shopkeeper" %}
+        {% include ("default/partials/navigationHomeConnectShop.html.twig") %}
+        {% endif %}
+    </div>
+    <div class="pt-2 w-100">
+        <section class="account bg-white rounded p-4 mx-auto">
+        <div class="w-50 mx-auto ">
+        <h1 class="text-center">Mon Compte</h1>
+            <div class="text-center pt-3">
+                <a href="{{ path('delete_account') }}" class="btn btn-danger delete">Supprimer le compte</a>
+            </div>
+            {% for level, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ level }} mt-4">
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+            {% endfor %}
+            <form method="post" enctype="multipart/form-data" class="my-5">
+                <h5 class="text-center">Modifier mon email</h5>
+                <div class="mb-3 pt-2">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" value="{{ user.email }}">
+                </div>
+                <h5 class="pt-3 text-center">Modifier mon mot de passe</h5>
+                <div class="mb-3 pt-2">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <label  class="form-label">Nouveau mot de passe</label>
+                        </div>
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">Doit contenir entre 8-20 caractères.</span>
+                        </div>
+                    </div>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe">
+                </div>
+                <div class="mb-3 ">
+                    <label for="password" class="col-form-label">Confirmez le mot de passe</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Votre mot de passe">
+                </div>
+                <div class="text-center pt-3">
+                    <button class="btn btn-warning ">Confirmer les changements</button>
+                </div>
+            </form>
+        </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block body %}
+<nav class="mx-3 nav flex-column rounded bg-white">
+  <a class="nav-link {{ page == 'accueil' ? 'fw-bold' : 'text-muted' }}" href="{{ path('home_connexion_controller') }}">Accueil</a>
+  <a class="nav-link {{ page == 'projet' ? 'fw-bold' : 'text-muted' }}" href="{{ path('projet_controller') }}">Projets</a>
+  <a class="nav-link {{ page == 'profil' ? 'fw-bold' : 'text-muted' }}" href="{{ path('profile_controller') }}">Profil</a>
+  <a class="nav-link {{ page == 'forum' ? 'fw-bold' : 'text-muted' }}" href="{{ path('forum_controller', {page: 'accueil'}) }}">Forum</a>
+  <a class="nav-link {{ page == 'account' ? 'fw-bold' : 'text-muted' }}" href="{{ path('account_controller') }}">Mon compte</a>
+</nav>
+{% endblock %}

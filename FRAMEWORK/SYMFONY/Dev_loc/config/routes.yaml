@@ -1,0 +1,101 @@
+user_register:
+    path: /inscription
+    controller: App\Controller\UserController::register
+
+user_register_profil:
+    path: /inscription/2
+    controller: App\Controller\UserController::registerProfil
+
+user_register_contact:
+    path: /inscription/3
+    controller: App\Controller\UserController::registerContact
+
+home_controller:
+    path: /accueil
+    controller: App\Controller\DefaultController::home
+
+home_connexion_controller:
+    path: /home
+    controller: App\Controller\DefaultController::homeConnexion
+
+profile_controller:
+    path: /mon-profil
+    controller: App\Controller\ProfileController::profile
+
+account_controller:
+    path: /mon-compte
+    controller: App\Controller\AccountController::account
+
+delete_account:
+    path: /suppression-compte
+    controller: App\Controller\AccountController::delete
+
+forum_controller:
+    path: /forum
+    controller: App\Controller\ForumController::forum
+
+article_controller:
+    path: /forum/article
+    controller: App\Controller\ArticleController::article
+
+add_article_controller:
+    path: /forum/ajoutez-article
+    controller: App\Controller\ArticleController::addArticle
+
+update_article_controller:
+    path: /forum/modifiez-article
+    controller: App\Controller\ArticleController::updateArticle
+
+delete_article_controller:
+    path: /forum/supprimez-article
+    controller: App\Controller\ArticleController::deleteArticle
+
+update_commentary_controller:
+    path: /forum/modifiez-commentaire
+    controller: App\Controller\ArticleController::updateCommentary
+
+delete_commentary_controller:
+    path: /forum/supprimez-commentaire
+    controller: App\Controller\ArticleController::deleteCommentary
+
+support_controller:
+    path: /support
+    controller: App\Controller\DefaultController::support
+
+login_controller:
+    path: /se-connecter
+    controller: App\Controller\SecurityController::login
+
+connect_google_start :
+    path: /connect/google
+    controller: App\Controller\GoogleController::connectAction
+
+forget_controller:
+    path: /mot-de-passe-oublie
+    controller: App\Controller\SecurityController::forgetPass
+
+mentions_controller:
+    path: /mentions-légales
+    controller: App\Controller\DefaultController::mentions
+
+funding_controller:
+    path: /aides-financement
+    controller: App\Controller\DefaultController::funding
+
+
+projet_controller:
+    path: /projet
+    controller: App\Controller\ProjetController::index
+
+developer_controller:
+    path: /developpeur
+    controller: App\Controller\DeveloperController::index
+
+paiement_controller:
+    path: /paiement
+    controller: App\Controller\PaiementController::paiement
+
+
+# - un formulaire + page qui affche les messages (this render, c'est une page de base)
+# - une route qui charge les messages en ajax pour les afficher => methode qui renvoi un json $this->json()
+# - une route qui traite l'envoi d'un message   => methode (avec vrification du formulaire envoyé) qui insere le message en db
